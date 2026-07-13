@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="string">
+  <tags>
+    <tag language="English"/>
+  </tags>
+  <strings>
+    <string id="dictator_law_name" text="Dictator Law"/>
+    <string id="dictator_law_description" text="The ruler holds sole authority over the kingdom's decisions."/>
+    <string id="dictator_law_details"
+            text="Vassals cannot propose kingdom decisions.{newline}Vassals cannot form armies."/>
+    <string id="dictator_law_secondary_effects" text="centralized rule"/>
+  </strings>
+</base>

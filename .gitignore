@@ -1,0 +1,38 @@
+# Build output and distributable package
+[Bb]in/
+[Oo]bj/
+[Dd]ist/
+
+# IDE and editor state
+.idea/
+.vs/
+.vscode/
+*.user
+*.suo
+*.rsuser
+*.sln.docstates
+
+# Local tools, dependencies and operating-system files
+.build-tools/
+.tools/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs, crash dumps and temporary files
+*.log
+*.dmp
+*.crash
+*.tmp
+*.bak
+*.swp
+*~
+
+# Keep the minimal, versioned Harmony runtime used by the build script.
+!vendor/
+!vendor/extracted/
+!vendor/extracted/Modules/
+!vendor/extracted/Modules/Bannerlord.Harmony/
+!vendor/extracted/Modules/Bannerlord.Harmony/bin/
+!vendor/extracted/Modules/Bannerlord.Harmony/bin/Win64_Shipping_Client/
+!vendor/extracted/Modules/Bannerlord.Harmony/bin/Win64_Shipping_Client/*.dll

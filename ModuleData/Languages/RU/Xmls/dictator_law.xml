@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="string">
+  <tags>
+    <tag language="Русский"/>
+  </tags>
+  <strings>
+    <string id="dictator_law_name" text="Закон диктатора"/>
+    <string id="dictator_law_description" text="Правитель единолично распоряжается решениями королевства."/>
+    <string id="dictator_law_details"
+            text="Вассалы не могут предлагать решения королевства.{newline}Вассалы не могут собирать армии."/>
+    <string id="dictator_law_secondary_effects" text="централизованное правление"/>
+  </strings>
+</base>

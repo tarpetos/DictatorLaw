@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="string">
+  <tags>
+    <tag language="Polski"/>
+  </tags>
+  <strings>
+    <string id="dictator_law_name" text="Prawo dyktatora"/>
+    <string id="dictator_law_description" text="Władca ma wyłączną władzę nad decyzjami królestwa."/>
+    <string id="dictator_law_details"
+            text="Wasale nie mogą proponować decyzji królestwa.{newline}Wasale nie mogą tworzyć armii."/>
+    <string id="dictator_law_secondary_effects" text="scentralizowane rządy"/>
+  </strings>
+</base>

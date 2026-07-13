@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="string">
+  <tags>
+    <tag language="한국어"/>
+  </tags>
+  <strings>
+    <string id="dictator_law_name" text="독재자 법"/>
+    <string id="dictator_law_description" text="통치자가 왕국의 결정권을 독점합니다."/>
+    <string id="dictator_law_details" text="봉신은 왕국 결정을 제안할 수 없습니다.{newline}봉신은 군대를 창설할 수 없습니다."/>
+    <string id="dictator_law_secondary_effects" text="중앙 집권 통치"/>
+  </strings>
+</base>

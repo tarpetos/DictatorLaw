@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="string">
+  <tags>
+    <tag language="Español (LA)"/>
+  </tags>
+  <strings>
+    <string id="dictator_law_name" text="Ley del dictador"/>
+    <string id="dictator_law_description"
+            text="El gobernante tiene autoridad exclusiva sobre las decisiones del reino."/>
+    <string id="dictator_law_details"
+            text="Los vasallos no pueden proponer decisiones del reino.{newline}Los vasallos no pueden formar ejércitos."/>
+    <string id="dictator_law_secondary_effects" text="gobierno centralizado"/>
+  </strings>
+</base>

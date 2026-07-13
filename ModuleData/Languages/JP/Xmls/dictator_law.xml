@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="string">
+  <tags>
+    <tag language="日本語"/>
+  </tags>
+  <strings>
+    <string id="dictator_law_name" text="独裁者法"/>
+    <string id="dictator_law_description" text="統治者が王国の決定権を独占する。"/>
+    <string id="dictator_law_details" text="封臣は王国の決定を提案できない。{newline}封臣は軍を編成できない。"/>
+    <string id="dictator_law_secondary_effects" text="中央集権統治"/>
+  </strings>
+</base>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="string">
+  <tags>
+    <tag language="Deutsch"/>
+  </tags>
+  <strings>
+    <string id="dictator_law_name" text="Diktatorgesetz"/>
+    <string id="dictator_law_description"
+            text="Der Herrscher besitzt die alleinige Entscheidungsgewalt im Königreich."/>
+    <string id="dictator_law_details"
+            text="Vasallen können keine Königreichsentscheidungen vorschlagen.{newline}Vasallen können keine Armeen bilden."/>
+    <string id="dictator_law_secondary_effects" text="zentralisierte Herrschaft"/>
+  </strings>
+</base>
