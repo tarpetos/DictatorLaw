@@ -5,6 +5,7 @@ using HarmonyLib;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.ObjectSystem;
 
 namespace DictatorLaw
 {
@@ -44,8 +45,16 @@ namespace DictatorLaw
             CampaignGameStarter campaignGameStarter = gameStarterObject as CampaignGameStarter;
             if (campaignGameStarter != null)
             {
+                WriteLog("DictatorLaw: OnGameStart - Resetting per-session policy cache.");
+                DictatorLawPolicyHelper.ResetSessionCache();
+
                 WriteLog("DictatorLaw: OnGameStart - Registering policy.");
                 DictatorLawPolicyHelper.RegisterDictatorLawPolicy();
+
+                WriteLog("DictatorLaw: OnGameStart - Registering DictatorLawCampaignBehavior.");
+                campaignGameStarter.AddBehavior(new DictatorLawCampaignBehavior());
+
+                DumpAllDictatorLawPolicyObjects("OnGameStart (after registration)");
             }
         }
 
@@ -84,11 +93,46 @@ namespace DictatorLaw
             }
         }
 
+        private static void DumpAllDictatorLawPolicyObjects(string context)
+        {
+            try
+            {
+                if (MBObjectManager.Instance == null)
+                {
+                    WriteLog($"DumpAllDictatorLawPolicyObjects [{context}]: MBObjectManager.Instance not ready.");
+                    return;
+                }
+
+                var allPolicies = MBObjectManager.Instance.GetObjectTypeList<PolicyObject>();
+                int matchCount = 0;
+
+                if (allPolicies != null)
+                {
+                    foreach (PolicyObject policy in allPolicies)
+                    {
+                        if (policy != null && policy.StringId != null && policy.StringId.StartsWith(DictatorLawPolicyHelper.PolicyId))
+                        {
+                            matchCount++;
+                            WriteLog(
+                                $"DumpAllDictatorLawPolicyObjects [{context}]: match #{matchCount}, " +
+                                $"hash={policy.GetHashCode()}, instance={policy.Id}");
+                        }
+                    }
+                }
+
+                WriteLog($"DumpAllDictatorLawPolicyObjects [{context}]: total matches found = {matchCount}");
+            }
+            catch (Exception ex)
+            {
+                WriteLog($"DumpAllDictatorLawPolicyObjects [{context}]: EXCEPTION: " + ex);
+            }
+        }
+
         public static void WriteLog(string message)
         {
             try
             {
-                // File.AppendAllText(LogPath, DateTime.Now.ToString("HH:mm:ss.fff") + " | " + message + Environment.NewLine);
+//                File.AppendAllText(LogPath, DateTime.Now.ToString("HH:mm:ss.fff") + " | " + message + Environment.NewLine);
             }
             catch
             {

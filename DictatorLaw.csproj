@@ -17,6 +17,7 @@
     <Compile Include="src\DictatorLawSubModule.cs" />
     <Compile Include="src\DictatorLawPolicyHelper.cs" />
     <Compile Include="src\HarmonyPatches.cs" />
+    <Compile Include="src\DictatorLawCampaignBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">

@@ -1,7 +1,6 @@
-* text=auto eol=lf
+* text=auto
 *.cs text eol=lf
 *.csproj text eol=lf
 *.xml text eol=lf
 *.sh text eol=lf
 vendor/** linguist-vendored
-*.ps1 text eol=crlf
