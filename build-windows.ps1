@@ -6,12 +6,38 @@ $ErrorActionPreference = "Stop"
 $RootDir =$PSScriptRoot
 Set-Location $RootDir
 
-$HarmonyDir = Join-Path$RootDir "vendor\extracted\Modules\Bannerlord.Harmony\bin\Win64_Shipping_Client"
-$HarmonyDll = Join-Path$HarmonyDir "0Harmony.dll"
+$HarmonyVersion = "2.2.2"
+$HarmonyDir = Join-Path $RootDir ".build-tools\harmony"
+$HarmonyDll = Join-Path $HarmonyDir "0Harmony.dll"
 
 if (-Not (Test-Path $HarmonyDll)) {
-    Write-Error "Missing Bannerlord.Harmony dependency files. Restore vendor\extracted or download the packaged release."
-    exit 1
+    Write-Host "Downloading Harmony v$HarmonyVersion for build..."
+    New-Item -ItemType Directory -Force -Path $HarmonyDir | Out-Null
+    $ZipPath = Join-Path $HarmonyDir "harmony.zip"
+    Invoke-WebRequest -Uri "https://www.nuget.org/api/v2/package/Lib.Harmony/$HarmonyVersion" -OutFile $ZipPath
+    Expand-Archive -Path $ZipPath -DestinationPath $HarmonyDir -Force
+    Move-Item -Path (Join-Path $HarmonyDir "lib\net472\0Harmony.dll") -Destination $HarmonyDll -Force
+    Remove-Item -Recurse -Force (Join-Path $HarmonyDir "lib")
+    Remove-Item -Recurse -Force (Join-Path $HarmonyDir "package")
+    Remove-Item -Recurse -Force (Join-Path $HarmonyDir "_rels")
+    Remove-Item -Force $ZipPath
+}
+
+$McmVersion = "5.9.2"
+$McmDir = Join-Path $RootDir ".build-tools\mcm"
+$McmDll = Join-Path $McmDir "MCMv5.dll"
+
+if (-Not (Test-Path $McmDll)) {
+    Write-Host "Downloading MCM v$McmVersion for build..."
+    New-Item -ItemType Directory -Force -Path $McmDir | Out-Null
+    $ZipPath = Join-Path $McmDir "mcm.zip"
+    Invoke-WebRequest -Uri "https://www.nuget.org/api/v2/package/Bannerlord.MCM/$McmVersion" -OutFile $ZipPath
+    Expand-Archive -Path $ZipPath -DestinationPath $McmDir -Force
+    Move-Item -Path (Join-Path $McmDir "lib\netstandard2.0\MCMv5.dll") -Destination $McmDll -Force
+    Remove-Item -Recurse -Force (Join-Path $McmDir "lib")
+    Remove-Item -Recurse -Force (Join-Path $McmDir "package")
+    Remove-Item -Recurse -Force (Join-Path $McmDir "_rels")
+    Remove-Item -Force $ZipPath
 }
 
 msbuild DictatorLaw.csproj /t:Rebuild /p:Configuration=Release "/p:BannerlordInstallDir=$BannerlordDir"
@@ -30,10 +56,7 @@ New-Item -ItemType Directory -Force -Path $ModuleDataDir | Out-Null
 
 Copy-Item (Join-Path $RootDir "bin\Release\DictatorLaw.dll") -Destination $BinDir
 
-$Assemblies = @("0Harmony.dll", "Mono.Cecil.dll", "Mono.Cecil.Mdb.dll", "Mono.Cecil.Pdb.dll", "Mono.Cecil.Rocks.dll", "MonoMod.Core.dll", "MonoMod.Backports.dll", "MonoMod.Iced.dll", "MonoMod.ILHelpers.dll", "MonoMod.Utils.dll", "System.ValueTuple.dll")
-foreach ($assembly in$Assemblies) {
-    Copy-Item (Join-Path $HarmonyDir $assembly) -Destination$BinDir
-}
+
 
 Copy-Item (Join-Path $RootDir "SubModule.xml") -Destination $DistDir
 Copy-Item (Join-Path $RootDir "ModuleData\*") -Destination $ModuleDataDir -Recurse

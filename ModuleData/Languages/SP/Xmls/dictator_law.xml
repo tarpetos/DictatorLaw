@@ -8,7 +8,12 @@
     <string id="dictator_law_description"
             text="El gobernante tiene autoridad exclusiva sobre las decisiones del reino."/>
     <string id="dictator_law_details"
-            text="Los vasallos no pueden proponer decisiones del reino.{newline}Los vasallos no pueden formar ejércitos."/>
+            text="Los vasallos no pueden proponer decisiones del reino.{newline}Los vasallos no pueden formar ejércitos.{newline}Resta influencia al gobernante."/>
     <string id="dictator_law_secondary_effects" text="gobierno centralizado"/>
+      <string id="dictator_law_penalty" text="Penalización de la ley del dictador"/>
+    <string id="dictator_law_settings_name" text="Ley del dictador"/>
+    <string id="dictator_law_settings_penalty_name" text="Penalización de influencia"/>
+    <string id="dictator_law_settings_penalty_hint" text="Penalización de influencia para el gobernante cuando la ley del dictador está activa."/>
+    <string id="dictator_law_settings_group" text="General"/>
   </strings>
 </base>

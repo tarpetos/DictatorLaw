@@ -7,7 +7,12 @@
     <string id="dictator_law_name" text="Dictator Law"/>
     <string id="dictator_law_description" text="The ruler holds sole authority over the kingdom's decisions."/>
     <string id="dictator_law_details"
-            text="Vassals cannot propose kingdom decisions.{newline}Vassals cannot form armies."/>
+            text="Vassals cannot propose kingdom decisions.{newline}Vassals cannot form armies.{newline}Takes influence from the ruler."/>
     <string id="dictator_law_secondary_effects" text="centralized rule"/>
+      <string id="dictator_law_penalty" text="Dictator law penalty"/>
+    <string id="dictator_law_settings_name" text="Dictator law"/>
+    <string id="dictator_law_settings_penalty_name" text="Influence penalty"/>
+    <string id="dictator_law_settings_penalty_hint" text="Influence penalty for the ruler when dictator law is active."/>
+    <string id="dictator_law_settings_group" text="General"/>
   </strings>
 </base>

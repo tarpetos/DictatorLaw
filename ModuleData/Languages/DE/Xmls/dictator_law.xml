@@ -8,7 +8,12 @@
     <string id="dictator_law_description"
             text="Der Herrscher besitzt die alleinige Entscheidungsgewalt im Königreich."/>
     <string id="dictator_law_details"
-            text="Vasallen können keine Königreichsentscheidungen vorschlagen.{newline}Vasallen können keine Armeen bilden."/>
+            text="Vasallen können keine Königreichsentscheidungen vorschlagen.{newline}Vasallen können keine Armeen bilden.{newline}Zieht dem Herrscher Einfluss ab."/>
     <string id="dictator_law_secondary_effects" text="zentralisierte Herrschaft"/>
+      <string id="dictator_law_penalty" text="Diktatorengesetz-Strafe"/>
+    <string id="dictator_law_settings_name" text="Diktatorengesetz"/>
+    <string id="dictator_law_settings_penalty_name" text="Einflussstrafe"/>
+    <string id="dictator_law_settings_penalty_hint" text="Einflussstrafe für den Herrscher, wenn das Diktatorengesetz aktiv ist."/>
+    <string id="dictator_law_settings_group" text="Allgemein"/>
   </strings>
 </base>

@@ -6,7 +6,12 @@
   <strings>
     <string id="dictator_law_name" text="獨裁者法令"/>
     <string id="dictator_law_description" text="統治者獨自掌握王國決策權。"/>
-    <string id="dictator_law_details" text="封臣不能提出王國決策。{newline}封臣不能組建軍團。"/>
+    <string id="dictator_law_details" text="封臣不能提出王國決策。{newline}封臣不能組建軍團。{newline}扣除統治者的影響力。"/>
     <string id="dictator_law_secondary_effects" text="中央集權統治"/>
+      <string id="dictator_law_penalty" text="獨裁法案懲罰"/>
+    <string id="dictator_law_settings_name" text="獨裁法案"/>
+    <string id="dictator_law_settings_penalty_name" text="影響力懲罰"/>
+    <string id="dictator_law_settings_penalty_hint" text="獨裁法案生效時對統治者的影響力懲罰。"/>
+    <string id="dictator_law_settings_group" text="常規"/>
   </strings>
 </base>

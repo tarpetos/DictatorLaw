@@ -8,7 +8,12 @@
     <string id="dictator_law_description"
             text="Le souverain détient seul l'autorité sur les décisions du royaume."/>
     <string id="dictator_law_details"
-            text="Les vassaux ne peuvent pas proposer de décisions du royaume.{newline}Les vassaux ne peuvent pas former d'armées."/>
+            text="Les vassaux ne peuvent pas proposer de décisions du royaume.{newline}Les vassaux ne peuvent pas former d'armées.{newline}Prend de l'influence au dirigeant."/>
     <string id="dictator_law_secondary_effects" text="pouvoir centralisé"/>
+      <string id="dictator_law_penalty" text="Pénalité de la loi du dictateur"/>
+    <string id="dictator_law_settings_name" text="Loi du dictateur"/>
+    <string id="dictator_law_settings_penalty_name" text="Pénalité d'influence"/>
+    <string id="dictator_law_settings_penalty_hint" text="Pénalité d'influence pour le dirigeant lorsque la loi du dictateur est active."/>
+    <string id="dictator_law_settings_group" text="Général"/>
   </strings>
 </base>

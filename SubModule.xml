@@ -10,25 +10,15 @@
     <DependedModule Id="SandBoxCore"/>
     <DependedModule Id="Sandbox"/>
     <DependedModule Id="StoryMode"/>
+    <DependedModule Id="Bannerlord.Harmony"/>
+    <DependedModule Id="Bannerlord.MBOptionScreen"/>
   </DependedModules>
   <SubModules>
     <SubModule>
       <Name value="DictatorLaw"/>
       <DLLName value="DictatorLaw.dll"/>
       <SubModuleClassType value="DictatorLaw.DictatorLawSubModule"/>
-      <Assemblies>
-        <Assembly value="0Harmony.dll"/>
-        <Assembly value="Mono.Cecil.dll"/>
-        <Assembly value="Mono.Cecil.Mdb.dll"/>
-        <Assembly value="Mono.Cecil.Pdb.dll"/>
-        <Assembly value="Mono.Cecil.Rocks.dll"/>
-        <Assembly value="MonoMod.Core.dll"/>
-        <Assembly value="MonoMod.Backports.dll"/>
-        <Assembly value="MonoMod.Iced.dll"/>
-        <Assembly value="MonoMod.ILHelpers.dll"/>
-        <Assembly value="MonoMod.Utils.dll"/>
-        <Assembly value="System.ValueTuple.dll"/>
-      </Assemblies>
+
       <Tags>
         <Tag key="DedicatedServerType" value="none"/>
         <Tag key="IsNoRenderModeElement" value="false"/>

@@ -6,7 +6,12 @@
   <strings>
     <string id="dictator_law_name" text="독재자 법"/>
     <string id="dictator_law_description" text="통치자가 왕국의 결정권을 독점합니다."/>
-    <string id="dictator_law_details" text="봉신은 왕국 결정을 제안할 수 없습니다.{newline}봉신은 군대를 창설할 수 없습니다."/>
+    <string id="dictator_law_details" text="봉신은 왕국 결정을 제안할 수 없습니다.{newline}봉신은 군대를 창설할 수 없습니다.{newline}통치자의 영향력을 빼앗습니다."/>
     <string id="dictator_law_secondary_effects" text="중앙 집권 통치"/>
+      <string id="dictator_law_penalty" text="독재자 법 페널티"/>
+    <string id="dictator_law_settings_name" text="독재자 법"/>
+    <string id="dictator_law_settings_penalty_name" text="영향력 페널티"/>
+    <string id="dictator_law_settings_penalty_hint" text="독재자 법이 활성화될 때 통치자의 영향력 페널티입니다."/>
+    <string id="dictator_law_settings_group" text="일반"/>
   </strings>
 </base>

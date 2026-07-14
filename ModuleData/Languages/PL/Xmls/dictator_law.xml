@@ -7,7 +7,12 @@
     <string id="dictator_law_name" text="Prawo dyktatora"/>
     <string id="dictator_law_description" text="Władca ma wyłączną władzę nad decyzjami królestwa."/>
     <string id="dictator_law_details"
-            text="Wasale nie mogą proponować decyzji królestwa.{newline}Wasale nie mogą tworzyć armii."/>
+            text="Wasale nie mogą proponować decyzji królestwa.{newline}Wasale nie mogą tworzyć armii.{newline}Odbiera wpływy władcy."/>
     <string id="dictator_law_secondary_effects" text="scentralizowane rządy"/>
+      <string id="dictator_law_penalty" text="Kara prawa dyktatora"/>
+    <string id="dictator_law_settings_name" text="Prawo dyktatora"/>
+    <string id="dictator_law_settings_penalty_name" text="Kara do wpływów"/>
+    <string id="dictator_law_settings_penalty_hint" text="Kara do wpływów dla władcy, gdy prawo dyktatora jest aktywne."/>
+    <string id="dictator_law_settings_group" text="Ogólne"/>
   </strings>
 </base>

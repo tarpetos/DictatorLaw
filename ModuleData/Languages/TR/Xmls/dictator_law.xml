@@ -6,7 +6,12 @@
   <strings>
     <string id="dictator_law_name" text="Diktatör Yasası"/>
     <string id="dictator_law_description" text="Hükümdar krallık kararlarında tek yetkiye sahiptir."/>
-    <string id="dictator_law_details" text="Vassallar krallık kararları öneremez.{newline}Vassallar ordu kuramaz."/>
+    <string id="dictator_law_details" text="Vassallar krallık kararları öneremez.{newline}Vassallar ordu kuramaz.{newline}Hükümdardan nüfuz alır."/>
     <string id="dictator_law_secondary_effects" text="merkezî yönetim"/>
+      <string id="dictator_law_penalty" text="Diktatör yasası cezası"/>
+    <string id="dictator_law_settings_name" text="Diktatör yasası"/>
+    <string id="dictator_law_settings_penalty_name" text="Nüfuz cezası"/>
+    <string id="dictator_law_settings_penalty_hint" text="Diktatör yasası etkinken hükümdar için nüfuz cezası."/>
+    <string id="dictator_law_settings_group" text="Genel"/>
   </strings>
 </base>

@@ -126,6 +126,64 @@ namespace DictatorLaw
         }
     }
 
+    [HarmonyPatch]
+    internal static class ClanPoliticsModelPatch
+    {
+        private static IEnumerable<MethodBase> TargetMethods()
+        {
+            Assembly campaignAssembly = typeof(Campaign).Assembly;
+            foreach (Type type in campaignAssembly.GetTypes())
+            {
+                if (type.Name.Contains("ClanPoliticsModel"))
+                {
+                    MethodInfo method = AccessTools.Method(type, "CalculateInfluenceChange");
+                    if (method != null && method.DeclaringType == type && !method.IsAbstract)
+                    {
+                        yield return method;
+                    }
+                }
+            }
+        }
+
+        private static void Postfix(Clan clan, ref TaleWorlds.CampaignSystem.ExplainedNumber __result)
+        {
+            if (clan == null || clan.Kingdom == null)
+            {
+                return;
+            }
+
+            if (DictatorLawPolicyHelper.IsDictatorLawActive(clan.Kingdom) && DictatorLawPolicyHelper.IsRulerClan(clan.Kingdom, clan))
+            {
+                int penalty = GetPenaltySafe();
+
+                if (penalty != 0)
+                {
+                    __result.Add(penalty, new TaleWorlds.Localization.TextObject("{=dictator_law_name}Dictator law"), null);
+                }
+            }
+        }
+
+        private static int GetPenaltySafe()
+        {
+            try
+            {
+                return GetMcmPenalty();
+            }
+            catch
+            {
+                return -10;
+            }
+        }
+
+        private static int GetMcmPenalty()
+        {
+            if (DictatorLawSettings.Instance != null)
+            {
+                return DictatorLawSettings.Instance.InfluencePenalty;
+            }
+            return -10;
+        }
+    }
     internal static class HarmonyReflectionHelper
     {
         internal static IEnumerable<MethodBase> GetAllOverrides(Type baseType, string methodName)

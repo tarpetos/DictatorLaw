@@ -6,7 +6,12 @@
   <strings>
     <string id="dictator_law_name" text="独裁者法"/>
     <string id="dictator_law_description" text="統治者が王国の決定権を独占する。"/>
-    <string id="dictator_law_details" text="封臣は王国の決定を提案できない。{newline}封臣は軍を編成できない。"/>
+    <string id="dictator_law_details" text="封臣は王国の決定を提案できない。{newline}封臣は軍を編成できない。{newline}支配者から影響力を奪う。"/>
     <string id="dictator_law_secondary_effects" text="中央集権統治"/>
+      <string id="dictator_law_penalty" text="独裁者法のペナルティ"/>
+    <string id="dictator_law_settings_name" text="独裁者法"/>
+    <string id="dictator_law_settings_penalty_name" text="影響力のペナルティ"/>
+    <string id="dictator_law_settings_penalty_hint" text="独裁者法が有効な時の支配者の影響力ペナルティ。"/>
+    <string id="dictator_law_settings_group" text="一般"/>
   </strings>
 </base>

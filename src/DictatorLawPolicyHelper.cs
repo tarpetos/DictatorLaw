@@ -50,7 +50,7 @@ namespace DictatorLaw
                 new TextObject("{=dictator_law_name}Dictator Law"),
                 new TextObject("{=dictator_law_description}The ruler holds sole authority over the kingdom's decisions"),
                 new TextObject("{=dictator_law_secondary_effects}centralized rule"),
-                new TextObject("{=dictator_law_details}Vassals cannot propose kingdom decisions.{newline}Vassals cannot form armies."),
+                new TextObject("{=dictator_law_details}Vassals cannot propose kingdom decisions.{newline}Vassals cannot form armies.{newline}Takes influence from the ruler."),
                 1f,
                 0f,
                 0f);

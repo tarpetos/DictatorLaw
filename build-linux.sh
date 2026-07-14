@@ -11,12 +11,30 @@ if [ -z "$BANNERLORD_DIR" ]; then
   exit 1
 fi
 
-HARMONY_DIR="$ROOT_DIR/vendor/extracted/Modules/Bannerlord.Harmony/bin/Win64_Shipping_Client"
+HARMONY_VERSION="2.2.2"
+HARMONY_DIR="$ROOT_DIR/.build-tools/harmony"
 HARMONY_DLL="$HARMONY_DIR/0Harmony.dll"
 
 if [ ! -f "$HARMONY_DLL" ]; then
-  echo "Missing Bannerlord.Harmony dependency files. Restore vendor/extracted or download the packaged release." >&2
-  exit 1
+  echo "Downloading Harmony v$HARMONY_VERSION for build..."
+  mkdir -p "$HARMONY_DIR"
+  curl -sSL -o "$HARMONY_DIR/harmony.zip" "https://www.nuget.org/api/v2/package/Lib.Harmony/$HARMONY_VERSION"
+  unzip -q -o "$HARMONY_DIR/harmony.zip" "lib/net472/0Harmony.dll" -d "$HARMONY_DIR"
+  mv "$HARMONY_DIR/lib/net472/0Harmony.dll" "$HARMONY_DLL"
+  rm -rf "$HARMONY_DIR/lib" "$HARMONY_DIR/harmony.zip"
+fi
+
+MCM_VERSION="5.9.2"
+MCM_DIR="$ROOT_DIR/.build-tools/mcm"
+MCM_DLL="$MCM_DIR/MCMv5.dll"
+
+if [ ! -f "$MCM_DLL" ]; then
+  echo "Downloading MCM v$MCM_VERSION for build..."
+  mkdir -p "$MCM_DIR"
+  curl -sSL -o "$MCM_DIR/mcm.zip" "https://www.nuget.org/api/v2/package/Bannerlord.MCM/$MCM_VERSION"
+  unzip -q -o "$MCM_DIR/mcm.zip" "lib/netstandard2.0/MCMv5.dll" -d "$MCM_DIR"
+  mv "$MCM_DIR/lib/netstandard2.0/MCMv5.dll" "$MCM_DLL"
+  rm -rf "$MCM_DIR/lib" "$MCM_DIR/mcm.zip"
 fi
 
 BUILD_TOOL="msbuild"
@@ -28,11 +46,7 @@ $BUILD_TOOL DictatorLaw.csproj /t:Rebuild /p:Configuration=Release "/p:Bannerlor
 
 rm -rf dist
 mkdir -p dist/DictatorLaw/bin/Win64_Shipping_Client dist/DictatorLaw/ModuleData
-cp bin/Release/DictatorLaw.dll dist/DictatorLaw/bin/Win64_Shipping_Client/
-
-for assembly in 0Harmony.dll Mono.Cecil.dll Mono.Cecil.Mdb.dll Mono.Cecil.Pdb.dll Mono.Cecil.Rocks.dll MonoMod.Core.dll MonoMod.Backports.dll MonoMod.Iced.dll MonoMod.ILHelpers.dll MonoMod.Utils.dll System.ValueTuple.dll; do
-  cp "$HARMONY_DIR/$assembly" dist/DictatorLaw/bin/Win64_Shipping_Client/
-done
+cp "bin/Release/DictatorLaw.dll" "dist/DictatorLaw/bin/Win64_Shipping_Client/"
 
 cp SubModule.xml dist/DictatorLaw/
 cp -R ModuleData/. dist/DictatorLaw/ModuleData/

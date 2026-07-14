@@ -8,7 +8,12 @@
     <string id="dictator_law_description"
             text="Il sovrano detiene l'autorità esclusiva sulle decisioni del regno."/>
     <string id="dictator_law_details"
-            text="I vassalli non possono proporre decisioni del regno.{newline}I vassalli non possono formare eserciti."/>
+            text="I vassalli non possono proporre decisioni del regno.{newline}I vassalli non possono formare eserciti.{newline}Sottrae influenza al sovrano."/>
     <string id="dictator_law_secondary_effects" text="governo centralizzato"/>
+      <string id="dictator_law_penalty" text="Penalità della legge del dittatore"/>
+    <string id="dictator_law_settings_name" text="Legge del dittatore"/>
+    <string id="dictator_law_settings_penalty_name" text="Penalità di influenza"/>
+    <string id="dictator_law_settings_penalty_hint" text="Penalità di influenza per il sovrano quando la legge del dittatore è attiva."/>
+    <string id="dictator_law_settings_group" text="Generale"/>
   </strings>
 </base>
