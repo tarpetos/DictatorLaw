@@ -9,10 +9,34 @@
     <string id="dictator_law_details"
             text="Вассалы не могут предлагать решения королевства.{newline}Вассалы не могут собирать армии.{newline}Отнимает влияние у правителя."/>
     <string id="dictator_law_secondary_effects" text="централизованное правление"/>
-      <string id="dictator_law_penalty" text="Штраф закона диктатора"/>
+    <string id="dictator_law_penalty" text="Штраф закона диктатора"/>
     <string id="dictator_law_settings_name" text="Закон диктатора"/>
     <string id="dictator_law_settings_penalty_name" text="Штраф к влиянию"/>
-    <string id="dictator_law_settings_penalty_hint" text="Штраф к влиянию для правителя, когда активен закон диктатора."/>
+    <string id="dictator_law_settings_penalty_hint"
+            text="Штраф к влиянию для правителя, когда активен закон диктатора."/>
     <string id="dictator_law_settings_group" text="Общее"/>
+    <string id="dictator_law_settings_block_armies" text="Блокировать армии вассалов"/>
+    <string id="dictator_law_settings_block_armies_hint" text="Если включено, вассалы не смогут создавать свои армии."/>
+    <string id="dictator_law_settings_block_war" text="Блокировать объявление войны"/>
+    <string id="dictator_law_settings_block_war_hint"
+            text="Если включено, вассалы не смогут предлагать объявление войны."/>
+    <string id="dictator_law_settings_block_peace" text="Блокировать предложения о мире"/>
+    <string id="dictator_law_settings_block_peace_hint" text="Если включено, вассалы не смогут предлагать мир."/>
+    <string id="dictator_law_settings_block_policy" text="Блокировать изменение законов"/>
+    <string id="dictator_law_settings_block_policy_hint"
+            text="Если включено, вассалы не смогут предлагать изменение законов королевства."/>
+    <string id="dictator_law_settings_block_settlement" text="Блокировать притязания на владения"/>
+    <string id="dictator_law_settings_block_settlement_hint"
+            text="Если включено, вассалы не смогут предлагать передачу владений."/>
+    <string id="dictator_law_settings_block_expulsion" text="Блокировать изгнание кланов"/>
+    <string id="dictator_law_settings_block_expulsion_hint"
+            text="Если включено, вассалы не смогут предлагать изгнание кланов из королевства."/>
+    <string id="dictator_law_settings_block_king" text="Блокировать выборы короля"/>
+    <string id="dictator_law_settings_block_king_hint"
+            text="Если включено, вассалы не смогут предлагать выборы короля."/>
+    <string id="dictator_law_settings_block_diplomacy" text="Блокировать союзы и торговлю"/>
+    <string id="dictator_law_settings_block_diplomacy_hint"
+            text="Если включено, вассалы не смогут предлагать союзы, торговые договоры и призывы к войне."/>
+    <string id="dictator_law_settings_group_restrictions" text="Ограничения"/>
   </strings>
 </base>

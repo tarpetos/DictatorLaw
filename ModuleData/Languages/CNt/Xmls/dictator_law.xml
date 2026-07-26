@@ -6,12 +6,30 @@
   <strings>
     <string id="dictator_law_name" text="獨裁者法令"/>
     <string id="dictator_law_description" text="統治者獨自掌握王國決策權。"/>
-    <string id="dictator_law_details" text="封臣不能提出王國決策。{newline}封臣不能組建軍團。{newline}扣除統治者的影響力。"/>
+    <string id="dictator_law_details"
+            text="封臣不能提出王國決策。{newline}封臣不能組建軍團。{newline}扣除統治者的影響力。"/>
     <string id="dictator_law_secondary_effects" text="中央集權統治"/>
-      <string id="dictator_law_penalty" text="獨裁法案懲罰"/>
+    <string id="dictator_law_penalty" text="獨裁法案懲罰"/>
     <string id="dictator_law_settings_name" text="獨裁法案"/>
     <string id="dictator_law_settings_penalty_name" text="影響力懲罰"/>
     <string id="dictator_law_settings_penalty_hint" text="獨裁法案生效時對統治者的影響力懲罰。"/>
     <string id="dictator_law_settings_group" text="常規"/>
+    <string id="dictator_law_settings_block_armies" text="禁止封臣组建军团"/>
+    <string id="dictator_law_settings_block_armies_hint" text="如果启用，封臣将无法组建自己的军团。"/>
+    <string id="dictator_law_settings_block_war" text="禁止宣战"/>
+    <string id="dictator_law_settings_block_war_hint" text="如果启用，封臣将无法提议宣战。"/>
+    <string id="dictator_law_settings_block_peace" text="禁止求和"/>
+    <string id="dictator_law_settings_block_peace_hint" text="如果启用，封臣将无法提议议和。"/>
+    <string id="dictator_law_settings_block_policy" text="禁止更改政策"/>
+    <string id="dictator_law_settings_block_policy_hint" text="如果启用，封臣将无法提议更改王国政策。"/>
+    <string id="dictator_law_settings_block_settlement" text="禁止封地要求"/>
+    <string id="dictator_law_settings_block_settlement_hint" text="如果启用，封臣将无法提议更改封地归属。"/>
+    <string id="dictator_law_settings_block_expulsion" text="禁止驱逐家族"/>
+    <string id="dictator_law_settings_block_expulsion_hint" text="如果启用，封臣将无法提议将某家族驱逐出王国。"/>
+    <string id="dictator_law_settings_block_king" text="禁止国王选举"/>
+    <string id="dictator_law_settings_block_king_hint" text="如果启用，封臣将无法提议国王选举。"/>
+    <string id="dictator_law_settings_block_diplomacy" text="禁止结盟和贸易"/>
+    <string id="dictator_law_settings_block_diplomacy_hint" text="如果启用，封臣将无法提议结盟、贸易协定或战争动员。"/>
+    <string id="dictator_law_settings_group_restrictions" text="限制"/>
   </strings>
 </base>

@@ -24,7 +24,15 @@ namespace DictatorLaw
 
             DictatorLawSubModule.WriteLog($"CreateArmy: IsActive={isActive}, IsRuler={isRuler}");
 
-            return !isActive || isRuler;
+            if (isActive && !isRuler)
+            {
+                if (DictatorLawSettings.Instance == null || DictatorLawSettings.Instance.BlockVassalArmies)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 
@@ -55,8 +63,11 @@ namespace DictatorLaw
 
                 if (isActive && !isRuler)
                 {
-                    DictatorLawSubModule.WriteLog("AddDecision: Blocked by Dictator Law.");
-                    return false;
+                    if (HarmonyReflectionHelper.IsDecisionBlocked(kingdomDecision))
+                    {
+                        DictatorLawSubModule.WriteLog("AddDecision: Blocked by Dictator Law.");
+                        return false;
+                    }
                 }
             }
 
@@ -83,7 +94,7 @@ namespace DictatorLaw
             bool isActive = DictatorLawPolicyHelper.IsDictatorLawActiveForPlayerKingdom(kingdom);
             bool isRuler = DictatorLawPolicyHelper.IsRulerClan(kingdom, __instance.ProposerClan);
 
-            if (isActive && !isRuler)
+            if (isActive && !isRuler && HarmonyReflectionHelper.IsDecisionBlocked(__instance))
             {
                 DictatorLawSubModule.WriteLog($"KingdomDecisionIsAllowedPatch: Blocked allowed state for {__instance.GetType().Name}");
                 __result = false;
@@ -118,7 +129,7 @@ namespace DictatorLaw
             bool isActive = DictatorLawPolicyHelper.IsDictatorLawActiveForPlayerKingdom(kingdom);
             bool isRuler = DictatorLawPolicyHelper.IsRulerClan(kingdom, __instance.ProposerClan);
 
-            if (isActive && !isRuler)
+            if (isActive && !isRuler && HarmonyReflectionHelper.IsDecisionBlocked(__instance))
             {
                 DictatorLawSubModule.WriteLog($"InfluenceCostPatch: Cost set to 9999999 for {__instance.GetType().Name} due to Dictator Law.");
                 __result = 9999999;
@@ -186,6 +197,24 @@ namespace DictatorLaw
     }
     internal static class HarmonyReflectionHelper
     {
+        internal static bool IsDecisionBlocked(KingdomDecision decision)
+        {
+            if (DictatorLawSettings.Instance == null) return true;
+            if (decision == null) return true;
+            
+            string typeName = decision.GetType().Name;
+            
+            if (typeName.Contains("DeclareWar")) return DictatorLawSettings.Instance.BlockDeclareWar;
+            if (typeName.Contains("MakePeace")) return DictatorLawSettings.Instance.BlockMakePeace;
+            if (typeName.Contains("KingdomPolicy")) return DictatorLawSettings.Instance.BlockKingdomPolicy;
+            if (typeName.Contains("SettlementClaim")) return DictatorLawSettings.Instance.BlockSettlementClaim;
+            if (typeName.Contains("ExpelClan")) return DictatorLawSettings.Instance.BlockExpelClan;
+            if (typeName.Contains("KingSelection")) return DictatorLawSettings.Instance.BlockKingSelection;
+            if (typeName.Contains("TradeAgreement") || typeName.Contains("Alliance") || typeName.Contains("CallToWar")) return DictatorLawSettings.Instance.BlockDiplomacy;
+            
+            return true;
+        }
+
         internal static IEnumerable<MethodBase> GetAllOverrides(Type baseType, string methodName)
         {
             HashSet<MethodBase> seen = new HashSet<MethodBase>();

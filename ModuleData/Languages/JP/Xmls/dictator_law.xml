@@ -6,12 +6,35 @@
   <strings>
     <string id="dictator_law_name" text="独裁者法"/>
     <string id="dictator_law_description" text="統治者が王国の決定権を独占する。"/>
-    <string id="dictator_law_details" text="封臣は王国の決定を提案できない。{newline}封臣は軍を編成できない。{newline}支配者から影響力を奪う。"/>
+    <string id="dictator_law_details"
+            text="封臣は王国の決定を提案できない。{newline}封臣は軍を編成できない。{newline}支配者から影響力を奪う。"/>
     <string id="dictator_law_secondary_effects" text="中央集権統治"/>
-      <string id="dictator_law_penalty" text="独裁者法のペナルティ"/>
+    <string id="dictator_law_penalty" text="独裁者法のペナルティ"/>
     <string id="dictator_law_settings_name" text="独裁者法"/>
     <string id="dictator_law_settings_penalty_name" text="影響力のペナルティ"/>
     <string id="dictator_law_settings_penalty_hint" text="独裁者法が有効な時の支配者の影響力ペナルティ。"/>
     <string id="dictator_law_settings_group" text="一般"/>
+    <string id="dictator_law_settings_block_armies" text="Block Vassal Armies"/>
+    <string id="dictator_law_settings_block_armies_hint"
+            text="If enabled, vassals cannot create their own armies while the law is active."/>
+    <string id="dictator_law_settings_block_war" text="Block War Declarations"/>
+    <string id="dictator_law_settings_block_war_hint" text="If enabled, vassals cannot propose declaring war."/>
+    <string id="dictator_law_settings_block_peace" text="Block Peace Proposals"/>
+    <string id="dictator_law_settings_block_peace_hint" text="If enabled, vassals cannot propose making peace."/>
+    <string id="dictator_law_settings_block_policy" text="Block Policy Changes"/>
+    <string id="dictator_law_settings_block_policy_hint"
+            text="If enabled, vassals cannot propose changing kingdom policies."/>
+    <string id="dictator_law_settings_block_settlement" text="Block Settlement Claims"/>
+    <string id="dictator_law_settings_block_settlement_hint"
+            text="If enabled, vassals cannot propose claiming settlements."/>
+    <string id="dictator_law_settings_block_expulsion" text="Block Clan Expulsion"/>
+    <string id="dictator_law_settings_block_expulsion_hint"
+            text="If enabled, vassals cannot propose expelling clans from the kingdom."/>
+    <string id="dictator_law_settings_block_king" text="Block King Elections"/>
+    <string id="dictator_law_settings_block_king_hint" text="If enabled, vassals cannot propose king elections."/>
+    <string id="dictator_law_settings_block_diplomacy" text="Block Alliances and Trade"/>
+    <string id="dictator_law_settings_block_diplomacy_hint"
+            text="If enabled, vassals cannot propose alliances, trade agreements, or call to war agreements."/>
+    <string id="dictator_law_settings_group_restrictions" text="Restrictions"/>
   </strings>
 </base>
